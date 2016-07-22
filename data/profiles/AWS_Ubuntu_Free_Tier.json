@@ -1,0 +1,68 @@
+{
+	"name":	"AWS_Ubuntu_Free_Tier",
+	"description": "Test Script for Ubuntu Automated Deploy",
+	"connection": {
+				"username": "Geoffrey",
+				"use_default_profile": false,
+				"region_name": "us-east-1",
+				"access_key": null,
+				"secret_key": null,
+				"credential_file": "c:\\<path_to>\\credentials.csv"
+	},
+	
+	"instances": [
+		{
+			"name": "test1",
+			"create_key": true,
+			"key_store": "c:\\users\\<username>\\.ssh\\",
+			"config": {
+				"ImageId": "ami-fce3c696",
+				"MinCount": 1,
+				"MaxCount": 1,
+				"InstanceType": "t2.micro",
+				"KeyName": null,
+				"SecurityGroups": [
+					"Guynn-1"
+				],
+				"SecurityGroupIds": null,
+				"UserData": null,
+				"Placement": null,
+				"KernelId": null,
+				"RamdiskId": null,
+				"BlockDeviceMappings": null,
+				"Monitoring": {
+					"Enabled": false
+				},
+				"SubnetId": null,
+				"DisableApiTermination": false,
+				"InstanceInitiatedShutdownBehavior": "stop",
+				"PrivateIpAddress": null,
+				"ClientToken": null,
+				"AdditionalInfo": null,
+				"NetworkInterfaces": null,
+				"IamInstanceProfile": null,
+				"EbsOptimized": false
+			},
+			"packages": [
+				{
+					"install": [
+						{
+							"name": "nginx",
+							"version": null,
+							"preCommands": [
+								"command1",
+								"command2",
+								"command3"
+							],
+							"postCommands": [
+								"command1",
+								"command2",
+								"command3"
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
